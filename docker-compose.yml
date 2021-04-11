@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+    app_frontend:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        #expose port 23 instead of default for SSH
+        ports:
+             - "23:22"
+        networks:
+           speedcoding_internal:
+            ipv4_address: 172.18.0.2
+    auth:
+        build:
+            context: .
+            dockerfile: ./authentication/Dockerfile
+
+        ports:
+             - "8080:8080"
+        networks:
+           speedcoding_internal:
+            ipv4_address: 172.18.0.3
+             
+    mongo:
+        build:
+            context: .
+            dockerfile: ./mongo/Dockerfile
+        volumes:
+            - ./mongo-data:/data/db
+        ports:
+             - "27017:27017"
+
+        networks:
+           speedcoding_internal:
+            ipv4_address: 172.18.0.5
+networks:
+  speedcoding_internal:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/24

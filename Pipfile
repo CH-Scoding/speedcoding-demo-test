@@ -1,0 +1,45 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+requests = "==2.24.0"
+motor = "==2.3.0"
+pytest = "==6.1.1"
+pipfile = "*"
+fastapi = "*"
+jinja2 = "*"
+aiofiles = "*"
+uvicorn = "*"
+odmantic = "*"
+websockets = "*"
+gql = "*"
+aiohttp = "*"
+python-multipart = "*"
+sentry-sdk = "*"
+dnspython = "*"
+pycryptodome = "*"
+aioredis = "*"
+uvloop = "*"
+asyncssh = "*"
+python-dotenv = "*"
+progress = "*"
+aiofile = "*"
+httpx = "*"
+pymongo = "*"
+#psycopg2-binary = "*" #If running on M1 architecture disable this
+fastapi-users = "*"
+watchdog="*"
+toml="*"
+dill="*"
+APScheduler="*"
+psutil="*"
+python_dateutil="*"
+tomlkit="*"
+pyinstrument="*"
+arrow = "*"
+[requires]
+python_version = "3.8"
